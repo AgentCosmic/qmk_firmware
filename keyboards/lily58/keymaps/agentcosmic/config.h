@@ -32,6 +32,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define RETRO_TAPPING // send tap key even if we didn't use the mod
 // #define IGNORE_MOD_TAP_INTERRUPT
 
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD // press both shift to capitablize next word
+
+#define COMBO_COUNT 10
+
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 27
