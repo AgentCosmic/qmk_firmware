@@ -3,7 +3,7 @@
 enum layer_number {
   _QWERTY = 0,
   _LOWER,
-  _RAISE,
+  _COH,
   _ADJUST,
 };
 
@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  = +  |    |   \   |------+------+------+------+------+------|
  * |Shft/(|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |Shft/)|
  * `-----------------------------------------/       /    \       \-----------------------------------------'
- *                   | LGUI | LALT |LCTRL | /LT(SPC)/      \LT(SPC)\  |RCTRL |LOWER |A(Tab)|
+ *                   | LGUI | LALT |LCTRL | /LT(SPC)/      \LT(SPC)\  |RCTRL | RALT |A(Tab)|
  *                   |      |      |      |/       /        \       \ |      |      |      |
  *                   `----------------------------'          '-------''--------------------'
  */
@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
   KC_ESC,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
-  KC_LSPO,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_EQL,    KC_BSLS, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_RSPC,
+  KC_LSPO,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_EQL,    KC_BSLS, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC,
   KC_LGUI, KC_LALT, MT(MOD_LCTL, KC_LBRC), LT(_LOWER, KC_SPC),  LT(_LOWER, KC_SPC), MT(MOD_RCTL, KC_RBRC), KC_RALT, A(KC_TAB)
 ),
 
@@ -39,10 +39,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |  [   |   ]  |      |      |                    |      |      |  Up  | PgU  |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |  -   |  {   |   }  |   _  |      |-------.    ,-------| PtSc | Left | Down |Right |  '   |      |
- * |------+------+------+------+------+------|       |    | BOOT  |------+------+------+------+------+------|
+ * |------+------+------+------+------+------| BOOT  |    | BOOT  |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|    |-------| INS  | Home | End  | PgD  |  "   |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /       /       \      \  |      |      |      |
+ *                   |      |      |      | /       /       \      \  | L(1) |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -51,30 +51,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
   _______, _______, KC_LBRC, KC_RBRC, _______, _______,                   _______, _______, KC_UP,   KC_PGUP, _______, _______,
   _______, KC_MINS, KC_LCBR, KC_RCBR, KC_UNDS,  _______,                   KC_PSCR, KC_LEFT, KC_DOWN, KC_RGHT, KC_QUOT, _______,
-  _______, _______, _______, _______, _______, _______, QK_BOOT,  _______, KC_INS,  KC_HOME, KC_END,  KC_PGDN, KC_DQUO, _______,
-                             _______, _______, _______, _______, _______,  _______, _______, _______
+  _______, _______, _______, _______, _______, _______, QK_BOOT,  QK_BOOT, KC_INS,  KC_HOME, KC_END,  KC_PGDN, KC_DQUO, _______,
+                             _______, _______, _______, _______,  _______, TG(_COH),_______, _______
 ),
 
 /* RAISE
  * ,-----------------------------------------.                    ,-----------------------------------------.
+ * |      |  F1  |  F2  |  F3  |  F4  |  F5  |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |   `  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |-------.    ,-------|      | Left | Down |  Up  |Right |      |
- * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
- * |  F7  |  F8  |  F9  | F10  | F11  | F12  |-------|    |-------|   +  |   -  |   =  |   [  |   ]  |   \  |
+ * |      |      |      |      |      |      |-------.    ,-------|      |      |      |      |      |      |
+ * |------+------+------+------+------+------|   U   |    |       |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI |LOWER | /Space  /       \Enter \  |RAISE |BackSP| RGUI |
+ *                   |      |      |      | /       /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
 
-[_RAISE] = LAYOUT(
+[_COH] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-  KC_F1,  KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,                       XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
-  KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,   _______, _______,  KC_PLUS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
+  _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
+  _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
+  _______, KC_F1,   KC_F2,   KC_F3, _______, _______,  KC_U,      _______, _______, _______, _______, _______, _______, _______,
                              _______, _______, _______,  _______, _______,  _______, _______, _______
 ),
 /* ADJUST
@@ -116,6 +116,8 @@ const uint16_t PROGMEM combo_ctrl_z[] = {KC_LSPO, KC_Z, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_x[] = {KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_c[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_v[] = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM combo_quote[] = {KC_L, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM combo_dquote[] = {KC_SCLN, KC_ENT, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_ctrl_w, LCTL(KC_W)),
   COMBO(combo_ctrl_r, LCTL(KC_R)),
@@ -127,6 +129,8 @@ combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_ctrl_x, LCTL(KC_X)),
   COMBO(combo_ctrl_c, LCTL(KC_C)),
   COMBO(combo_ctrl_v, LCTL(KC_V)),
+  COMBO(combo_quote, KC_QUOT),
+  COMBO(combo_dquote, KC_DQUO),
 };
 
 //SSD1306 OLED update loop, make sure to enable OLED_ENABLE=yes in rules.mk
@@ -150,6 +154,35 @@ const char *read_keylogs(void);
 // void set_timelog(void);
 // const char *read_timelog(void);
 
+
+// https://joric.github.io/qle/
+// to get it on the other side, you need to update config.h to right master and flash the other side
+static void render_logo(void) {
+    static const char PROGMEM raw_logo[] = {
+        0,  0,  0,  0,  0,  0, 16, 32, 64,128,  0,  0,255,  0,  0,  0, 34,178,170,166,162, 34,  0,  0,  0,  0,  0,  0,
+        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  4,  8, 16,  0,  0,128,128, 64, 78, 64,128,128,  0,  0, 32, 16,  8,
+        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 16, 40, 68,130,
+        1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,255,  0,  0,  0,243, 68, 68, 68, 68, 67,  0,145, 89, 85,211, 81, 81,  0,  0,  0,255,  0,  0,  0,  0,  0,  0,
+        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 16, 16, 16,
+        0,  0, 56,198,  1,  0,  0,  0,  0,  0,  0,  0,  1,198, 56,  0,  0, 16, 16, 16,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,  0,  0,  0,112,136,  4,  4,248,  0,  0,  0,  0,  0,  0,  0,  0,  1,  2,  4,  8, 16, 32,192,128,  0,  0,  0,
+        0,  0,  0,  0,  0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,255,  0,  0,  0,145, 80, 80,208, 80, 94,
+        0,249, 34, 34, 35, 34, 34,  0,  0,  0,255,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 64, 32, 16,  0,  1,  2,  2,  4,228,  4,  2,
+        2,  1,  0, 16, 32, 64,  0,  0,  0,  0,  0,  0,  0,  0,  0,224,144,  8,  4,  4,  4,  8,240,  1,  1,  0,  0,  0,
+        0,  0,  0,  0,  0,  0, 64,160, 16, 16,  8,  4,255,  0,  1,  2,  0,  0,  0,  0,  0,  0, 0,  0,  0,  0,  0,  0,
+        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,113, 74, 74, 75, 74,114,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,255,  0,
+        0,  1,  2,  4,  8,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+        0,  0,  0,  0,  1, 50, 78,132,128, 64, 63,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  2,
+        4,255,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+    };
+    oled_write_raw_P(raw_logo, sizeof(raw_logo));
+}
+
+
 bool oled_task_user(void) {
   if (is_keyboard_master()) {
     // If you want to change the display of OLED, you need to change here
@@ -160,7 +193,7 @@ bool oled_task_user(void) {
     //oled_write_ln(read_host_led_state(), false);
     //oled_write_ln(read_timelog(), false);
   } else {
-    oled_write(read_logo(), false);
+    render_logo();
   }
     return false;
 }

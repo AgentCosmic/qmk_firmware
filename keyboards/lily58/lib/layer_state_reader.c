@@ -4,10 +4,10 @@
 #include "lily58.h"
 
 #define L_BASE 0
-#define L_LOWER (1 << 1)
-#define L_RAISE (1 << 2)
+#define L_1 (1 << 1)
+#define L_2 (1 << 2)
 #define L_ADJUST (1 << 3)
-#define L_ADJUST_TRI (L_ADJUST | L_RAISE | L_LOWER)
+#define L_ADJUST_TRI (L_ADJUST | L_2 | L_1)
 
 char layer_state_str[24];
 
@@ -17,11 +17,11 @@ const char *read_layer_state(void) {
   case L_BASE:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Default");
     break;
-  case L_RAISE:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Raise");
+  case L_1:
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Function");
     break;
-  case L_LOWER:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Lower");
+  case L_2:
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: COH 2");
     break;
   case L_ADJUST:
   case L_ADJUST_TRI:
