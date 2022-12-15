@@ -6,8 +6,7 @@
 #define L_BASE 0
 #define L_1 (1 << 1)
 #define L_2 (1 << 2)
-#define L_ADJUST (1 << 3)
-#define L_ADJUST_TRI (L_ADJUST | L_2 | L_1)
+#define L_3 (1 << 3)
 
 char layer_state_str[24];
 
@@ -18,14 +17,13 @@ const char *read_layer_state(void) {
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Default");
     break;
   case L_1:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Function");
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Engram");
     break;
   case L_2:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: COH 2");
     break;
-  case L_ADJUST:
-  case L_ADJUST_TRI:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Adjust");
+  case L_3:
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Function");
     break;
   default:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%u", layer_state);
