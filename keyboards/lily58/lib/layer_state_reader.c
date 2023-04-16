@@ -14,10 +14,10 @@ const char *read_layer_state(void) {
   switch (layer_state)
   {
   case L_BASE:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Default");
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Engram");
     break;
   case L_1:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Engram");
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: QWERTY");
     break;
   case L_2:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: COH 2");
