@@ -84,9 +84,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |                    |      | Home |  Up  | PgU  |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ENGM |  -   |  [   |   ]  |   _  |      |-------.    ,-------| PtSc | Left | Down |Right |  ?   |  '   |
+ * | ENGM |  -   |  [   |   ]  |   _  |      |-------.    ,-------| PtSc | Left | Down |Right |  /   |  '   |
  * |------+------+------+------+------+------| BOOT  |    | BOOT  |------+------+------+------+------+------|
- * | COH2 |      |      |      |      |      |-------|    |-------| INS  | End  |      | PgD  |  /   |  "   |
+ * | COH2 |      |      |      |      |      |-------|    |-------| INS  | End  |      | PgD  |  ?   |  "   |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   |      |      |      | /       /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
@@ -96,8 +96,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_FN] = LAYOUT(
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
   _______, _______, _______, _______, _______, _______,                   _______, KC_HOME, KC_UP,   KC_PGUP, _______, _______,
-  TG(_QWE),KC_MINS, KC_LBRC, KC_RBRC, KC_UNDS, _______,                   KC_PSCR, KC_LEFT, KC_DOWN, KC_RGHT, KC_QUES, KC_QUOT,
-  TG(_COH),_______, _______, _______, _______, _______, QK_BOOT, QK_BOOT, KC_INS,  KC_END,  _______, KC_PGDN, KC_SLSH, KC_DQUO,
+  TG(_QWE),KC_MINS, KC_LBRC, KC_RBRC, KC_UNDS, _______,                   KC_PSCR, KC_LEFT, KC_DOWN, KC_RGHT, KC_SLSH, KC_QUOT,
+  TG(_COH),_______, _______, _______, _______, _______, QK_BOOT, QK_BOOT, KC_INS,  KC_END,  _______, KC_PGDN, KC_QUES, KC_DQUO,
                             _______, _______, _______, _______,  _______, _______,  _______ , _______
 )
 };
@@ -117,6 +117,7 @@ const uint16_t PROGMEM combo_ctrl_w[] = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_a[] = {KC_E, KC_A, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_s[] = {KC_T, KC_S, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_f[] = {KC_M, KC_F, COMBO_END};
+const uint16_t PROGMEM combo_ctrl_r[] = {KC_R, KC_M, COMBO_END};
 // const uint16_t PROGMEM combo_quote[] = {KC_L, KC_SCLN, COMBO_END};
 // const uint16_t PROGMEM combo_dquote[] = {KC_SCLN, KC_ENT, COMBO_END};
 // const uint16_t PROGMEM combo_ctrl_b[] = {KC_V, KC_B, COMBO_END};
@@ -131,6 +132,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_ctrl_a, LCTL(KC_A)),
     COMBO(combo_ctrl_s, LCTL(KC_S)),
     COMBO(combo_ctrl_f, LCTL(KC_F)),
+    COMBO(combo_ctrl_r, LCTL(KC_R)),
     // COMBO(combo_ctrl_r, LCTL(KC_R)),
     // COMBO(combo_ctrl_b, LCTL(KC_B)),
     // COMBO(combo_quote, KC_QUOT),
