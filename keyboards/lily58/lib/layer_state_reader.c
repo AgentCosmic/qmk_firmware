@@ -20,7 +20,10 @@ const char *read_layer_state(void) {
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: QWERTY");
     break;
   case L_2:
-    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: COH 2");
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: COH2");
+    break;
+  case L_2 | L_1:
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: COH2/QWERTY");
     break;
   case L_3:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Function");
