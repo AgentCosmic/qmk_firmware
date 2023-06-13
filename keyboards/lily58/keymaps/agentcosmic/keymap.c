@@ -13,11 +13,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | DEL  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | TAB  |  B   |  Y   |  O   |  U   |  -   |                    |  '   |  L   |  D   |  W   |  V   | BSPC |
+ * | TAB  |  X   |  Y   |  O   |  U   |  -   |                    |  '   |  L   |  D   |  W   |  V   | BSPC |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | ESC  |  C   |  I   |  E   |  A   |  =   |-------.    ,-------|  .   |  H   |  T   |  S   |  N   | ENT  |
  * |------+------+------+------+------+------|   Q   |    |   Z   |------+------+------+------+------+------|
- * |Shft/(|  G   |  X   |  J   |  K   |  ;   |-------|    |-------|  ,   |  R   |  M   |  F   |  P   |Shft/)|
+ * |Shft/(|  G   |  B   |  J   |  K   |  ;   |-------|    |-------|  ,   |  R   |  M   |  F   |  P   |Shft/)|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   | LGUI | LALT |LCTRL | /LT(SPC)/       \LT(SPC)\  |RCTRL | RALT |A(Tab)|
  *                   |      |      |      |/       /         \      \ |      |      |      |
@@ -26,9 +26,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_NGM] = LAYOUT(
   KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-  KC_TAB,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_MINS,                  KC_QUOT, KC_L,    KC_D,    KC_W,    KC_V,    KC_BSPC,
+  KC_TAB,  KC_X,    KC_Y,    KC_O,    KC_U,    KC_MINS,                  KC_QUOT, KC_L,    KC_D,    KC_W,    KC_V,    KC_BSPC,
   KC_ESC,  KC_C,    KC_I,    KC_E,    KC_A,    KC_EQL,                   KC_DOT,  KC_H,    KC_T,    KC_S,    KC_N,    KC_ENT,
-  KC_LSPO, KC_G,    KC_X,    KC_J,    KC_K,    KC_SCLN,   KC_Q,  KC_Z,   KC_COMM, KC_R,    KC_M,    KC_F,    KC_P,    KC_RSPC,
+  KC_LSPO, KC_G,    KC_B,    KC_J,    KC_K,    KC_SCLN,   KC_Q,  KC_Z,   KC_COMM, KC_R,    KC_M,    KC_F,    KC_P,    KC_RSPC,
     KC_LGUI, LALT_T(KC_LBRC), LCTL_T(KC_LCBR), LT(_FN, KC_SPC),  LT(_FN, KC_SPC), RCTL_T(KC_RCBR), RALT_T(KC_RBRC), A(KC_TAB)
 ),
 
@@ -95,12 +95,12 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 const uint16_t PROGMEM combo_ctrl_c[] = {KC_C, KC_I, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_v[] = {KC_I, KC_E, COMBO_END};
-const uint16_t PROGMEM combo_ctrl_z[] = {KC_G, KC_X, COMBO_END};
+const uint16_t PROGMEM combo_ctrl_z[] = {KC_G, KC_B, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_t[] = {KC_O, KC_U, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_w[] = {KC_Y, KC_O, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_a[] = {KC_E, KC_A, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_s[] = {KC_T, KC_S, COMBO_END};
-const uint16_t PROGMEM combo_ctrl_s2[] = {KC_X, KC_J, COMBO_END};
+const uint16_t PROGMEM combo_ctrl_s2[] = {KC_B, KC_J, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_f[] = {KC_M, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_r[] = {KC_R, KC_M, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_f5[] = {KC_3, KC_4, COMBO_END};
