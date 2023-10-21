@@ -13,34 +13,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  `   |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | DEL  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | TAB  |  X   |  Y   |  O   |  U   |  -   |                    |  '   |  L   |  D   |  W   |  V   | BSPC |
+ * | TAB  |  X   |  Y   |  O   |  U   |  =   |                    |  '   |  L   |  D   |  W   |  V   | BSPC |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ESC  |  C   |  I   |  E   |  A   |  =   |-------.    ,-------|  .   |  H   |  T   |  S   |  N   | ENT  |
- * |------+------+------+------+------+------|   Q   |    |   Z   |------+------+------+------+------+------|
- * |Shft/(|  G   |  B   |  J   |  K   |  ;   |-------|    |-------|  ,   |  R   |  M   |  F   |  P   |Shft/)|
+ * | ESC  |  C   |  I   |  E   |  A   |  ;   |-------.    ,-------|  .   |  H   |  T   |  S   |  N   | ENT  |
+ * |------+------+------+------+------+------|   /   |    | LGUI  |------+------+------+------+------+------|
+ * |Shft/(|  G   |  B   |  J   |  K   |  -   |-------|    |-------|  ,   |  R   |  M   |  F   |  P   |Shft/)|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LGUI | LALT |LCTRL | /LT(SPC)/       \LT(SPC)\  |RCTRL | RALT |A(Tab)|
- *                   |      |      |      |/       /         \      \ |      |      |      |
- *                   `----------------------------'           '------''--------------------'
+ *                   |   Q  | LALT |LCTRL | /LT(SPC)/       \LT(SPC)\  |RCTRL | RALT |  Z   |
+ *                   |      |      |      |/       /         \       \ |      |      |      |
+ *                   `----------------------------'           '-------''--------------------'
  */
 
 [_NGM] = LAYOUT(
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-  KC_TAB,  KC_X,    KC_Y,    KC_O,    KC_U,    KC_MINS,                  KC_QUOT, KC_L,    KC_D,    KC_W,    KC_V,    KC_BSPC,
-  KC_ESC,  KC_C,    KC_I,    KC_E,    KC_A,    KC_EQL,                   KC_DOT,  KC_H,    KC_T,    KC_S,    KC_N,    KC_ENT,
-  KC_LSPO, KC_G,    KC_B,    KC_J,    KC_K,    KC_SCLN,   KC_Q,  KC_Z,   KC_COMM, KC_R,    KC_M,    KC_F,    KC_P,    KC_RSPC,
-    KC_LGUI, LALT_T(KC_LBRC), LCTL_T(KC_LCBR), LT(_FN, KC_SPC),  LT(_FN, KC_SPC), RCTL_T(KC_RCBR), RALT_T(KC_RBRC), A(KC_TAB)
+  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
+  KC_TAB,  KC_X,    KC_Y,    KC_O,    KC_U,    KC_EQL,                      KC_QUOT, KC_L,    KC_D,    KC_W,    KC_V,    KC_BSPC,
+  KC_ESC,  KC_C,    KC_I,    KC_E,    KC_A,    KC_SCLN,                     KC_DOT,  KC_H,    KC_T,    KC_S,    KC_N,    KC_ENT,
+  KC_LSPO, KC_G,    KC_B,    KC_J,    KC_K,    KC_MINS,  KC_SLSH,  KC_LGUI, KC_COMM, KC_R,    KC_M,    KC_F,    KC_P,    KC_RSPC,
+          KC_Q, LALT_T(KC_LBRC), LCTL_T(KC_LCBR), LT(_FN, KC_SPC), LT(_FN,  KC_SPC), RCTL_T(KC_RCBR), RALT_T(KC_RBRC), KC_Z
 ),
 
 /* FN
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                    |  F7  |  F8  |  F9  | F10  | F11  | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |  ?   |      |      |      |                    |      | PgU  |  Up  | Home |      |      |
+ * |      |      |      |      |      |      |                    |      | PgU  |  Up  | Home |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ENGM |  \   |  /   | PtSc | Ins  |      |-------.    ,-------| PtSc | Left | Down |Right | MENU |      |
+ * | ENGM |  |   |  \   | PtSc | Ins  |      |-------.    ,-------|      | Left | Down |Right | MENU |      |
  * |------+------+------+------+------+------| BOOT  |    | BOOT  |------+------+------+------+------+------|
- * | COH2 |      |  |   |      |      |      |-------|    |-------| INS  | PgD  |      | End  |      |      |
+ * | COH2 |      |      |      |      |      |-------|    |-------|      | PgD  |      | End  |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   |      |      |      | /       /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
@@ -49,9 +49,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_FN] = LAYOUT(
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                      KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-  _______, _______, KC_QUES, _______, _______, _______,                    _______, KC_PGUP, KC_UP,   KC_HOME, _______, _______,
-  TG(_QWE),KC_BSLS, KC_SLSH, KC_PSCR,  KC_INS, _______,                    _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_APP,  _______,
-  TG(_COH),_______, KC_PIPE, _______, _______, _______, QK_BOOT,  QK_BOOT, _______, KC_PGDN,  _______, KC_END, _______, _______,
+  _______, _______, _______, _______, _______, _______,                    _______, KC_PGUP, KC_UP,   KC_HOME, _______, _______,
+  TG(_QWE),KC_PIPE, KC_BSLS, KC_PSCR,  KC_INS, _______,                    _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_APP,  _______,
+  TG(_COH),_______, _______, _______, _______, _______, QK_BOOT,  QK_BOOT, _______, KC_PGDN,  _______, KC_END, _______, _______,
                              _______, _______, _______, _______,  _______, _______, _______ , _______
 ),
 
@@ -104,6 +104,7 @@ const uint16_t PROGMEM combo_ctrl_s2[] = {KC_B, KC_J, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_f[] = {KC_M, KC_F, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_r[] = {KC_R, KC_M, COMBO_END};
 const uint16_t PROGMEM combo_ctrl_f5[] = {KC_3, KC_4, COMBO_END};
+const uint16_t PROGMEM combo_alt_tab[] = {KC_D, KC_W, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_ctrl_c, LCTL(KC_C)),
     COMBO(combo_ctrl_v, LCTL(KC_V)),
@@ -116,6 +117,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo_ctrl_f, LCTL(KC_F)),
     COMBO(combo_ctrl_r, LCTL(KC_R)),
     COMBO(combo_ctrl_f5, KC_F5),
+    COMBO(combo_alt_tab, A(KC_TAB)),
 };
 
 //SSD1306 OLED update loop, make sure to enable OLED_ENABLE=yes in rules.mk
