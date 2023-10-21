@@ -25,11 +25,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_NGM] = LAYOUT(
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-  KC_TAB,  KC_X,    KC_Y,    KC_O,    KC_U,    KC_EQL,                      KC_QUOT, KC_L,    KC_D,    KC_W,    KC_V,    KC_BSPC,
-  KC_ESC,  KC_C,    KC_I,    KC_E,    KC_A,    KC_SCLN,                     KC_DOT,  KC_H,    KC_T,    KC_S,    KC_N,    KC_ENT,
-  KC_LSPO, KC_G,    KC_B,    KC_J,    KC_K,    KC_MINS,  KC_SLSH,  KC_LGUI, KC_COMM, KC_R,    KC_M,    KC_F,    KC_P,    KC_RSPC,
-          KC_Q, LALT_T(KC_LBRC), LCTL_T(KC_LCBR), LT(_FN, KC_SPC), LT(_FN,  KC_SPC), RCTL_T(KC_RCBR), RALT_T(KC_RBRC), KC_Z
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
+    KC_TAB,  KC_X,    KC_Y,    KC_O,    KC_U,    KC_EQL,                      KC_QUOT, KC_L,    KC_D,    KC_W,    KC_V,    KC_BSPC,
+    KC_ESC,  KC_C,    KC_I,    KC_E,    KC_A,    KC_SCLN,                     KC_DOT,  KC_H,    KC_T,    KC_S,    KC_N,    KC_ENT,
+    SC_LSPO, KC_G,    KC_B,    KC_J,    KC_K,    KC_MINS,  KC_SLSH,  KC_LGUI, KC_COMM, KC_R,    KC_M,    KC_F,    KC_P,    SC_RSPC,
+            KC_Q, LALT_T(KC_LBRC), LCTL_T(KC_LCBR), LT(_FN, KC_SPC), LT(_FN,  KC_SPC), RCTL_T(KC_RCBR), RALT_T(KC_RBRC), KC_Z
 ),
 
 /* FN
@@ -48,11 +48,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_FN] = LAYOUT(
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                      KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-  _______, _______, _______, _______, _______, _______,                    _______, KC_PGUP, KC_UP,   KC_HOME, _______, _______,
-  TG(_QWE),KC_PIPE, KC_BSLS, KC_PSCR,  KC_INS, _______,                    _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_APP,  _______,
-  TG(_COH),_______, _______, _______, _______, _______, QK_BOOT,  QK_BOOT, _______, KC_PGDN,  _______, KC_END, _______, _______,
-                             _______, _______, _______, _______,  _______, _______, _______ , _______
+    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                      KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
+    _______, _______, _______, _______, _______, _______,                    _______, KC_PGUP, KC_UP,   KC_HOME, _______, _______,
+    TG(_QWE),KC_PIPE, KC_BSLS, KC_PSCR,  KC_INS, _______,                    _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_APP,  _______,
+    TG(_COH),_______, _______, _______, _______, _______, QK_BOOT,  QK_BOOT, _______, KC_PGDN,  _______, KC_END, _______, _______,
+                               _______, _______, _______, _______,  _______, _______, _______ , _______
 ),
 
 /* QWERTY
@@ -71,24 +71,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_QWE] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                  _______, _______, _______, _______, _______, _______,
-  _______,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    _______,
-  _______,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, _______,
-  _______,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_EQL ,   KC_BSLS, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
-                          _______, _______, _______, _______,   _______,  _______, _______, _______
+    _______, _______, _______, _______, _______, _______,                  _______, _______, _______, _______, _______, _______,
+    _______,  KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    _______,
+    _______,  KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, _______,
+    _______,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_EQL ,   KC_BSLS, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, _______,
+                            _______, _______, _______, _______,   _______,  _______, _______, _______
 ),
 
 [_COH] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, _______,  KC_U,     _______, _______, _______, _______, _______, _______, _______,
-                             _______, _______, _______,  _______, _______,  _______, _______, _______
+    _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,  KC_U,     _______, _______, _______, _______, _______, _______, _______,
+                               _______, _______, _______,  _______, _______,  _______, _______, _______
 )
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-  return state;
+    return state;
 }
 
 // Combos
@@ -124,9 +124,9 @@ combo_t key_combos[COMBO_COUNT] = {
 #ifdef OLED_ENABLE
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-  if (!is_keyboard_master())
-    return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
-  return rotation;
+    if (!is_keyboard_master())
+        return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
+    return rotation;
 }
 
 // When you add source files to SRC in rules.mk, you can use functions.
@@ -171,45 +171,45 @@ static void render_logo(void) {
 
 
 bool oled_task_user(void) {
-  if (is_keyboard_master()) {
-    // If you want to change the display of OLED, you need to change here
-    oled_write_ln(read_layer_state(), false);
-    oled_write_ln(read_keylog(), false);
-    oled_write_ln(read_keylogs(), false);
-    //oled_write_ln(read_mode_icon(keymap_config.swap_lalt_lgui), false);
-    //oled_write_ln(read_host_led_state(), false);
-    //oled_write_ln(read_timelog(), false);
-  } else {
-    render_logo();
-  }
+    if (is_keyboard_master()) {
+        // If you want to change the display of OLED, you need to change here
+        oled_write_ln(read_layer_state(), false);
+        oled_write_ln(read_keylog(), false);
+        oled_write_ln(read_keylogs(), false);
+        //oled_write_ln(read_mode_icon(keymap_config.swap_lalt_lgui), false);
+        //oled_write_ln(read_host_led_state(), false);
+        //oled_write_ln(read_timelog(), false);
+    } else {
+        render_logo();
+    }
     return false;
 }
 #endif // OLED_ENABLE
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  // log keys to oled
-  if (record->event.pressed) {
+    // log keys to oled
+    if (record->event.pressed) {
 #ifdef OLED_ENABLE
-    set_keylog(keycode, record);
+        set_keylog(keycode, record);
 #endif
-    // set_timelog();
-  }
+        // set_timelog();
+    }
 
-  // overcome limitation of using curly brackets with ctrl mod tap
-  switch (keycode) {
-      case LCTL_T(KC_LCBR):
-          if (record->tap.count && record->event.pressed) {
-              tap_code16(KC_LCBR); // Send KC_LCBR on tap
-              return false;        // Return false to ignore further processing of key
-          }
-          break;
-      case RCTL_T(KC_RCBR):
-          if (record->tap.count && record->event.pressed) {
-              tap_code16(KC_RCBR); // Send KC_RCBR on tap
-              return false;        // Return false to ignore further processing of key
-          }
-          break;
-  }
+    // overcome limitation of using curly brackets with ctrl mod tap
+    switch (keycode) {
+        case LCTL_T(KC_LCBR):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LCBR); // Send KC_LCBR on tap
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+        case RCTL_T(KC_RCBR):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_RCBR); // Send KC_RCBR on tap
+                return false;        // Return false to ignore further processing of key
+            }
+            break;
+    }
 
-  return true;
+    return true;
 }
